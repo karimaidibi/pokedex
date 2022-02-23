@@ -26,11 +26,9 @@ app.component('pokemon-box', {
             <!--column-->
             <div v-for="(dict, index) in filtered_pokemons" :key=dict.id class="col pokemonbox">
                 <div class="border bg-light p-3">
-                    <img v-bind:src="dict.img_url" style="width: auto; height: auto;">
+                    <img v-bind:src="dict.img_url" style="width: 300px; height: auto; padding:auto; margin:auto">
                     <p class="idpokemon"><em>#{{dict.id}}</em></p>
-                    <br/>
                     <p class="namepokemon">{{dict.name}}</p>
-                    <br/>
                     <button
                     type="button"
                     data-bs-toggle="modal"

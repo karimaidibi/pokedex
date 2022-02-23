@@ -18,15 +18,21 @@ app.component('pokemon-details',{
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <img v-bind:src="selected_pokemon.img_url">
+            <img v-bind:src="selected_pokemon.img_url" >
             <br/>
-            height : {{selected_pokemon.height}}
-            <br/>
-            weight : {{selected_pokemon.weight}}
-            <br/>
-            <p v-for="ability in selected_pokemon.abilities">ability : {{ability.ability.name}}</p>
-            <br/>
-            <p v-for="type in selected_pokemon.types"> type : {{type.type.name}}</p>
+            <strong>Form</strong>
+            <ul>
+            <li>height : {{selected_pokemon.height}}</li>
+            <li>weight : {{selected_pokemon.weight}}</li>
+            </ul>
+            <strong>Abilities : </strong>
+            <ul>
+            <li v-for="ability in selected_pokemon.abilities">{{ability.ability.name}}</li>
+            </ul>
+            <strong>Types :</strong>
+            <ul >
+            <li v-for="type in selected_pokemon.types">{{type.type.name}}</li>
+            </ul>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
