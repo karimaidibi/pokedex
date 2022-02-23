@@ -20,7 +20,7 @@ const app = Vue.createApp({
 
     created(){
             var self = this
-            const url = 'https://pokeapi.co/api/v2/pokemon?limit=50&offset=0'
+            const url = 'https://pokeapi.co/api/v2/pokemon?limit=800&offset=0'
             fetch(url)
             .then(function(response){
                 return response.json()
