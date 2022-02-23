@@ -16,32 +16,12 @@ app.component('pokemon-search',{
                 <input class="form-control" id="searchPokemon" v-model="searchPokemon" placeholder="Chercher...">
             </div>
             <div class="p2 mt-1">
-            <button v-on:click="filterPokemon" style="margin-left:10px; background-color: white;">
-                <i class="bi bi-search"></i>
-            </button>
+                <i style="margin-left:10px;" class="bi bi-search"></i>
             </div>                   
         </div>
     </div>
     `,
     methods: {
-        filterPokemon(){
-            const box = document.querySelectorAll('div.pokemonbox')
-            const input = document.getElementById('searchPokemon')
-            const filter = input.value.toLowerCase()
-            for(let i = 0; i<box.length;i++){
-                let name = box[i].querySelector('p.namepokemon')
-                let id = box[i].querySelector('p.idpokemon')
-                if (name && id){
-                    let id_value = id.textContent || id.innertext
-                    let name_value = name.textContent || name.innertext
-                    if ((id_value.toLowerCase().indexOf(filter) > -1) || (name_value.toLowerCase().indexOf(filter) > -1)){
-                        box[i].style.display="";
-                    }else {
-                        box[i].style.display = "none";
-                    }
-                }
-            }
-        },
         filterUpdate(){
             const searchPokemon = this.searchPokemon
             console.log(searchPokemon)
