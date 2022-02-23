@@ -2,6 +2,7 @@ const app = Vue.createApp({
     data() {
         return {
             pokemon_list: [],
+            pokemon_filter : null
 
         }
     },
@@ -12,7 +13,9 @@ const app = Vue.createApp({
             while (s.length < size) s = "0" + s;
             return s;
         },
-
+        updateFilter(searchPokemon){
+            this.pokemon_filter = searchPokemon
+        }
     },
 
     created(){

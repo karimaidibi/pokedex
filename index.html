@@ -20,10 +20,10 @@
       </div>
 
       <!--search bar-->
-      <pokemon-search></pokemon-search>
+      <pokemon-search :pokemon_list="pokemon_list" @filter-updated="updateFilter"></pokemon-search>
       
       <!--pokemons-->
-      <pokemon-box :pokemon_list="pokemon_list"></pokemon-box>
+      <pokemon-box :pokemon_list="pokemon_list" :pokemon_filter="pokemon_filter"></pokemon-box>
     </div>
 
     <!-- Import App -->

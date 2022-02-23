@@ -4,6 +4,10 @@ app.component('pokemon-box', {
         type : Array,
         required : true,
       },
+      pokemon_filter : {
+        type : String,
+        required : false,
+      }
     },
 
     data() {
@@ -20,7 +24,7 @@ app.component('pokemon-box', {
         <!--row-->
         <div v-if="pokemon_list" class="p-3 row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
             <!--column-->
-            <div v-for="(dict, index) in pokemon_list" :key=dict.id class="col pokemonbox">
+            <div v-for="(dict, index) in filtered_pokemons" :key=dict.id class="col pokemonbox">
                 <div class="border bg-light p-3">
                     <img v-bind:src="dict.img_url" style="width: auto; height: auto;">
                     <p class="idpokemon"><em>#{{dict.id}}</em></p>
@@ -61,8 +65,20 @@ app.component('pokemon-box', {
             console.log('error : ' + err.message)
             throw err 
         })
-    }
-     }
+      }
+     },
+     computed:{
+      filtered_pokemons(){
+          if (this.pokemon_filter!=null){
+            return this.pokemon_list.filter(p=>{
+                return (p.name.toLowerCase().indexOf(this.pokemon_filter) > -1) || (p.id.toLowerCase().indexOf(this.pokemon_filter) > -1)
+            })
+          }else{
+            return this.pokemon_list
+          }
+
+      }
+  },
 
 
   })
