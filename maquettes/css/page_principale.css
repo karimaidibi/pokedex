@@ -1,0 +1,22 @@
+.header{
+    background-color: red;
+    border: 2px solid ;
+    width: auto;
+    height: 70px;
+    text-align: center;
+}
+
+.searchDivision{
+    background-color: yellow;
+    border : 2px solid;
+    height : auto;
+    width : auto;
+    text-align: center;
+    margin-left : 100px;
+    margin-right : 100px;
+    margin-top:10px
+}
+
+.PokemonsDiv{
+    border: 2px solid black;
+}
