@@ -69,7 +69,7 @@ app.component('pokemon-box', {
       filtered_pokemons(){
           if (this.pokemon_filter!=null){
             return this.pokemon_list.filter(p=>{
-                return (p.name.toLowerCase().indexOf(this.pokemon_filter) > -1) || (p.id.toLowerCase().indexOf(this.pokemon_filter) > -1)
+                return (p.name.toLowerCase().indexOf(this.pokemon_filter.toLowerCase()) > -1) || (p.id.toLowerCase().indexOf(this.pokemon_filter.toLowerCase()) > -1)
             })
           }else{
             return this.pokemon_list
